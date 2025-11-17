@@ -23,5 +23,10 @@ class Baum:
         items.append(node.value)
         self.traverse(node.right, items)
 
+    def __repr__(self):
+        items: list[int] = []
+        self.traverse(self.root, items)
+        return str(items)
+
 # Beispiel
 bst = Baum(Node(5))
