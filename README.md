@@ -11,14 +11,14 @@
 3. Schreiben Sie einen Programmcode, welcher einen natürlichen binären Suchbaum
    erzeugt und dessen Höhe berechnet
 4. Erzeugen Sie einen Datensatz von 10 zufällig erzeugten ganzzahligen Schlüsseln.
-   Finden Sie eine Möglichkeit, diesen korrekt in seiner Vater–Sohn–Beziehung auszugeben
+   Finden Sie eine Möglichkeit, diesen korrekt in seiner Vater-Sohn-Beziehung auszugeben
 5. Erzeugen Sie 100 Datensätze von jeweils 20 zufällig erzeugten ganzzahligen Schlüsseln.
    Berechnen Sie jeweils die Höhe der erzeugten Suchbäume und bilden Sie den Durch-
-   schnitt dieser Höhen. Vergleichen Sie das Ergebnis mit dem eines AVL–Baumes.
+   schnitt dieser Höhen. Vergleichen Sie das Ergebnis mit dem eines AVL-Baumes.
    Abgegeben werden muss:
 6. Eine (höchstens sechsseitige) Beschreibung der Algorithmen, des Problems und der
    Lösung
-7. Eine Programmbeschreibung mit Quellcode (Die Programm–Kommentare sind in
+7. Eine Programmbeschreibung mit Quellcode (Die Programm-Kommentare sind in
    deutscher Sprache zu halten)
 8. Ein lauffähiges Programm, das entweder unter Windows (Version 10), MacOS oder
    Linux ohne weitere Manipulationen oder Integration in eine IDE (zB Eclipse) ges-
