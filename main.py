@@ -28,5 +28,37 @@ class Baum:
         self.traverse(self.root, items)
         return str(items)
 
+    def insert(self, value: int, node: Optional[Node] = None) -> Node:
+        """
+        Rekursive Methode um einen neuen Wert in den Suchbaum hinzuzufügen
+        """
+        if node is None:
+            node = self.root
+
+        if value < node.value:
+            if node.left is None:
+                node.left = Node(value)
+            else:
+                self.insert(value, node.left)
+        elif value > node.value:
+            if node.right is None:
+                node.right = Node(value)
+            else:
+                self.insert(value, node.right)
+
+        # Wenn value == node.value ist, kein Duplikat erzeugen
+
+        return node
+
+
 # Beispiel
 bst = Baum(Node(5))
+bst.insert(3)
+bst.insert(7)
+bst.insert(1)
+bst.insert(9)
+bst.insert(2)
+bst.insert(99)
+bst.insert(0)
+
+print(bst)
