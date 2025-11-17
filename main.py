@@ -28,6 +28,27 @@ class Baum:
         self.traverse(self.root, items)
         return str(items)
 
+    def get_height(self, root: Optional[Node] = None) -> int:
+        """
+        Rekursive Methode um die Höhe des Suchbaums zu errechnen.
+        Ein Suchbaum mit einer einzigen Node zählt hier als Höhe 1.
+        """
+
+        if root is None:
+            root = self.root
+
+        # Ein Suchbaum mit einer einzigen Node zählt hier als Höhe 1.
+        if root.left is None and root.right is None:
+            return 1
+
+        # Berechnen der Höhen der Äste links und rechts
+        left_height = self.get_height(root.left) if root.left else 0
+        right_height = self.get_height(root.right) if root.right else 0
+
+        # Die Gesamthöhe des Baums entspricht dann der Höhe des
+        # längsten Astes + 1 (+ die root-node)
+        return max(left_height, right_height) + 1
+
     def insert(self, value: int, node: Optional[Node] = None) -> Node:
         """
         Rekursive Methode um einen neuen Wert in den Suchbaum hinzuzufügen
@@ -62,3 +83,5 @@ bst.insert(99)
 bst.insert(0)
 
 print(bst)
+
+print(bst.get_height())
