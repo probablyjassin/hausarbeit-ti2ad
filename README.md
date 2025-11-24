@@ -1,8 +1,15 @@
 ---
 
-# Aufgabenstellung für die Hausarbeit
+# Binäre Suchbäume
 
-## Binäre Suchbäume
+**Ausführung:**
+`python main.py`
+
+Das Installieren von externen Abhängigkeiten ist nicht erforderlich,
+denn das Projekt nutzt nur die Standard-Library von Python.
+(os, json, typing, random)
+
+## Aufgabenstellung für die Hausarbeit
 
 **Aufgabenstellung**
 
