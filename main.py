@@ -72,16 +72,126 @@ class Baum:
         return node
 
 
+class AVLBaum(Baum):
+    def get_balance_factor(self, node: Optional[Node]) -> int:
+        """
+        Berechnet den Gleichgewichts-Faktor eines Knotens.
+        Gleichgewichts-Faktor = Höhe(linker Teilbaum) - Höhe(rechter Teilbaum)
+        """
+        if node is None:
+            return 0
+
+        left_height = self.get_height(node.left) if node.left else 0
+        right_height = self.get_height(node.right) if node.right else 0
+
+        return left_height - right_height
+
+    def rotate_right(self, z: Node) -> Node:
+        """Rechtsdrehung um Knoten z"""
+
+        if not z.left:
+            raise ValueError("Für Rechtsdrehung ausgewählte Node hat keine linke Node")
+
+        y = z.left
+        T3 = y.right
+
+        # Rotation durchführen
+        y.right = z
+        z.left = T3
+
+        return y
+
+    def rotate_left(self, z: Node) -> Node:
+        """Linksdrehung um Knoten z"""
+
+        if not z.right:
+            raise ValueError("Für Linksdrehung ausgewählte Node hat keine rechte Node")
+
+        y = z.right
+        T2 = y.left
+
+        # Rotation durchführen
+        y.left = z
+        z.right = T2
+
+        return y
+
+    def insert(self, value: int, node: Optional[Node] = None) -> Node:
+        """
+        AVL-Insert: Fügt einen Wert ein und balanciert den Baum
+        """
+        # Erstes Einfügen (root setzen)
+        if node is None:
+            node = self.root
+
+        # Standard BST Insert
+        if value < node.value:
+            if node.left is None:
+                node.left = Node(value)
+            else:
+                node.left = self.insert(value, node.left)
+        elif value > node.value:
+            if node.right is None:
+                node.right = Node(value)
+            else:
+                node.right = self.insert(value, node.right)
+        else:
+            # Duplikat, nichts tun
+            return node
+
+        # Balance-Faktor berechnen
+        balance = self.get_balance_factor(node)
+
+        # Fall 1: Links-Links (Right Rotation)
+        if balance > 1 and node.left and value < node.left.value:
+            return self.rotate_right(node)
+
+        # Fall 2: Rechts-Rechts (Left Rotation)
+        if balance < -1 and node.right and value > node.right.value:
+            return self.rotate_left(node)
+
+        # Fall 3: Links-Rechts (Left-Right Rotation)
+        if balance > 1 and node.left and value > node.left.value:
+            node.left = self.rotate_left(node.left)
+            return self.rotate_right(node)
+
+        # Fall 4: Rechts-Links (Right-Left Rotation)
+        if balance < -1 and node.right and value < node.right.value:
+            node.right = self.rotate_right(node.right)
+            return self.rotate_left(node)
+
+        return node
+
+
 # Beispiel
 bst = Baum(Node(5))
 bst.insert(3)
 bst.insert(7)
 bst.insert(1)
 bst.insert(9)
+bst.insert(10)
 bst.insert(2)
-bst.insert(99)
+bst.insert(12)
 bst.insert(0)
+bst.insert(11)
 
 print(bst)
 
 print(bst.get_height())
+
+print("-----")
+
+avl_bst = AVLBaum(Node(5))
+avl_bst.insert(3)
+avl_bst.insert(7)
+avl_bst.insert(1)
+avl_bst.insert(9)
+avl_bst.insert(93)
+avl_bst.insert(2)
+avl_bst.insert(99)
+avl_bst.insert(0)
+avl_bst.insert(91)
+
+print(avl_bst)
+
+print(avl_bst.get_height())
