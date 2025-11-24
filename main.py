@@ -24,6 +24,22 @@ class Baum:
         items.append(node.value)
         self.traverse(node.right, items)
 
+    def breadth_traverse(self) -> list[list[int]]:
+        res: list[list[int]] = []
+        queue: list[Node] = []
+        queue.append(self.root)
+        while queue:
+            level: list[int] = []
+            for _ in range(len(queue)):
+                node = queue.pop(0)
+                level.append(node.value)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            res.append(level)
+        return res
+
     def __repr__(self):
         items: list[int] = []
         self.traverse(self.root, items)
