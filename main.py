@@ -1,3 +1,4 @@
+import math
 from typing import Optional
 from daten import DATASET
 
@@ -24,10 +25,42 @@ class Baum:
         items.append(node.value)
         self.traverse(node.right, items)
 
+    def breadth_traverse(self) -> list[list[Optional[int]]]:
+        res: list[list[Optional[int]]] = []
+        queue: list[Optional[Node]] = []
+        queue.append(self.root)
+        while queue:
+            level: list[Optional[int]] = []
+            for _ in range(len(queue)):
+                node = queue.pop(0)
+                level.append(node.value if node else None)
+                queue.append(node.left if node else None)
+                queue.append(node.right if node else None)
+
+            if any(type(entry) == int for entry in level):
+                res.append(level)
+            else:
+                # Wir entfernen die überflüssigen 'None's am Ende der Repräsentation
+                """while res[-1][-1] == None:
+                res[-1].pop()"""
+                break
+        return res
+
     def __repr__(self):
-        items: list[int] = []
-        self.traverse(self.root, items)
-        return str(items)
+        print("printing repr")
+        level_repr: list[list[Optional[int]]] = self.breadth_traverse()
+        representation: str = ""
+        indent_level: int = len(level_repr[-1])
+        for i, level in enumerate(level_repr):
+            for value in level:
+                representation += (
+                    " " * math.ceil(indent_level / (2**i))
+                    + " " * 4 * (len(level) - 1)
+                    + " "
+                    + f" {value}  "
+                )
+            representation += "\n"
+        return representation
 
     def get_height(self, root: Optional[Node] = None) -> int:
         """
