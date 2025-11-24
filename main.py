@@ -1,4 +1,5 @@
 from typing import Optional
+from daten import DATASET
 
 
 class Node:
@@ -163,7 +164,7 @@ class AVLBaum(Baum):
         return node
 
 
-# Beispiel
+# Umsetzung
 bst = Baum(Node(5))
 bst.insert(3)
 bst.insert(7)
@@ -195,3 +196,5 @@ avl_bst.insert(91)
 print(avl_bst)
 
 print(avl_bst.get_height())
+
+# print(DATASET)
