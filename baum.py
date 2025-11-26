@@ -1,3 +1,10 @@
+"""
+Enthält die tatsächlichen Implementierungen des Binären Suchbaums und des AVL-Baums
+entsprechend der Aufgabenstellung. Sie wurden in diese Datei verlagert um
+die Struktur des Projekts übersichtlich zu halten. `main.py` importiert die Klassen
+`Node`, `Baum` und `AVLBaum` aus dieser Datei.
+"""
+
 from typing import Optional
 
 

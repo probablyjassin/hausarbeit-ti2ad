@@ -1,3 +1,11 @@
+"""
+Aufgabe 5 erfordert das Erzeugen von
+100 Datensätzen von jeweils 20 zufällig erzeugten ganzzahligen Schlüsseln.
+daten.py prüft, ob in `daten.json` bereits ein solcher Datensatz erzeugt wurde.
+Falls nicht, wird dieser neu erzeugt, und in beiden Fällen wird der Datensatz in die Konstante
+`DATASET` an `main.py` exportiert.
+"""
+
 import os
 import json
 from random import randint

@@ -1,3 +1,9 @@
+"""
+Hier wird das Programm ausgeführt.
+Das Skript greift auf die anderen `.py`-Dateien in diesem Verzeichnis zu und
+erfüllt die Aufgaben aus der Aufgabenstellung.
+"""
+
 from baum import Node, Baum, AVLBaum
 from daten import DATASET
 
