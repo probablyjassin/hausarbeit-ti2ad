@@ -1,16 +1,24 @@
 ---
-
 # Binäre Suchbäume
-
 ---
 
 Für die Programmierung wurde Python `v3.12.10` genutzt,
-allerdings sollte eine beliebige Version neuer als `v3.9.0` kompatibel sein.
+allerdings ist eine beliebige Version ab `v3.9.0` kompatibel.
 
 Die verwendete Entwicklungsumgebung ist Visual Studio Code.
 Es liegt ein `.vscode`-Verzeichnis für die Konfiguration bei,
 dieses Einzubinden ist aber vollständig optional, da es sich dabei nur um sog. Typehints handelt.
 Die Ausführbarkeit des Projekts ist davon nicht betroffen.
+
+Type Hints/Type Annotations sind ein optionales Python-Feature (seit Python 3.5),
+das genutzt werden kann, um Typ-Informationen zu dokumentieren.
+Diese Annotationen haben keinen Einfluss auf die Laufzeit des Programms.
+
+```py
+# Beispiel
+def breadth_traverse(self) -> list[list[Optional[int]]]:
+   "..."
+```
 
 Das Installieren von externen Abhängigkeiten ist nicht erforderlich,
 denn das Projekt nutzt nur die Standard-Library von Python.
@@ -21,7 +29,7 @@ denn das Projekt nutzt nur die Standard-Library von Python.
 `daten.py` - Aufgabe 5 erfordert das Erzeugen von
 100 Datensätzen von jeweils 20 zufällig erzeugten ganzzahligen Schlüsseln.
 daten.py prüft, ob in `daten.json` bereits ein solcher Datensatz erzeugt wurde.
-Falls nicht, wird dieser neu erzeugt und in beiden Fällen wird der Datensatz in die Variable
+Falls nicht, wird dieser neu erzeugt, und in beiden Fällen wird der Datensatz in die Konstante
 `DATASET` an `main.py` exportiert.
 
 `baum.py` - enthält die tatsächlichen Implementierungen des Binären Suchbaums und des AVL-Baums
@@ -34,6 +42,7 @@ Das Skript greift auf die anderen `.py`-Dateien in diesem Verzeichnis zu und
 erfüllt die Aufgaben aus der Aufgabenstellung.
 
 ### Ausführung
+
 `$ python main.py`
 
 ---
