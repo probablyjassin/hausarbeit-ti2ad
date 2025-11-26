@@ -2,12 +2,41 @@
 
 # Binäre Suchbäume
 
-**Ausführung:**
-`python main.py`
+---
+
+Für die Programmierung wurde Python `v3.12.10` genutzt,
+allerdings sollte eine beliebige Version neuer als `v3.9.0` kompatibel sein.
+
+Die verwendete Entwicklungsumgebung ist Visual Studio Code.
+Es liegt ein `.vscode`-Verzeichnis für die Konfiguration bei,
+dieses Einzubinden ist aber vollständig optional, da es sich dabei nur um sog. Typehints handelt.
+Die Ausführbarkeit des Projekts ist davon nicht betroffen.
 
 Das Installieren von externen Abhängigkeiten ist nicht erforderlich,
 denn das Projekt nutzt nur die Standard-Library von Python.
 (os, json, typing, random)
+
+### Struktur
+
+`daten.py` - Aufgabe 5 erfordert das Erzeugen von
+100 Datensätzen von jeweils 20 zufällig erzeugten ganzzahligen Schlüsseln.
+daten.py prüft, ob in `daten.json` bereits ein solcher Datensatz erzeugt wurde.
+Falls nicht, wird dieser neu erzeugt und in beiden Fällen wird der Datensatz in die Variable
+`DATASET` an `main.py` exportiert.
+
+`baum.py` - enthält die tatsächlichen Implementierungen des Binären Suchbaums und des AVL-Baums
+entsprechend der Aufgabenstellung. Sie wurden in diese Datei verlagert um
+die Struktur des Projekts übersichtlich zu halten. `main.py` importiert die Klassen
+`Node`, `Baum` und `AVLBaum` aus dieser Datei.
+
+`main.py` - hier wird das Programm ausgeführt.
+Das Skript greift auf die anderen `.py`-Dateien in diesem Verzeichnis zu und
+erfüllt die Aufgaben aus der Aufgabenstellung.
+
+### Ausführung
+`$ python main.py`
+
+---
 
 ## Aufgabenstellung für die Hausarbeit
 
