@@ -43,7 +43,22 @@ erfüllt die Aufgaben aus der Aufgabenstellung.
 
 ### Ausführung
 
-`$ python main.py`
+Es muss einfach nur `main.py` mit einem beliebigen Versionskompatiblen
+Interpreter ausgeführt werden.
+Wie genau die Binaries in Ihrem benannt sind kommt auf das Betriebssystem an,
+aber in den allermeisten Fällen sind die Konventionen wie folgt:
+
+**Windows:**
+
+```
+$ python main.py
+```
+
+**Linux/macOS:**
+
+```
+$ python3 main.py
+```
 
 Die Ausgaben werden via `print()`-Statements in die normale,
 Standardmäßige Ausgabe des Terminals (stdout) ausgegeben.
