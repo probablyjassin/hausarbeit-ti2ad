@@ -20,6 +20,7 @@ for value in numbers[1:]:
 print(test_bst)
 
 print("-------------")
+print("Aufgabe 5")
 
 print("Erstelle BSTs mit den Einträgen aus dem Dataset...")
 
