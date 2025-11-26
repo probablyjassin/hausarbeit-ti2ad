@@ -45,6 +45,9 @@ erfüllt die Aufgaben aus der Aufgabenstellung.
 
 `$ python main.py`
 
+Die Ausgaben werden via `print()`-Statements in die normale,
+Standardmäßige Ausgabe des Terminals (stdout) ausgegeben.
+
 ---
 
 ## Aufgabenstellung für die Hausarbeit
