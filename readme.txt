@@ -1,5 +1,23 @@
+---
+
 Ich empfehle die in Markdown verfasste README.md
 Diese Datei liegt nur aus Formalitätsgründen hier.
+
+---
+
+
+Ich empfehle die in Markdown verfasste README.md
+Diese Datei liegt nur aus Formalitätsgründen hier.
+
+---
+
+
+
+
+
+
+
+
 
 Binäre Suchbäume
 
