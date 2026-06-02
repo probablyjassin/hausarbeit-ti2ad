@@ -16,7 +16,7 @@ def integrate_2d_midpoint(
 ) -> float:
     """
     Approximiert das Integral über [x_min, x_max] x [y_min, y_max]
-    mit der Midpoint-Rectangle-Regel.
+    mit der Midpoint-Rechteck-Regel.
     """
     if x_steps <= 0 or y_steps <= 0:
         raise ValueError("x_steps und y_steps müssen > 0 sein.")
